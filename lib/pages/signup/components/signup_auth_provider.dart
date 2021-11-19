@@ -1,0 +1,104 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:foodapp/pages/home/home_page.dart';
+import 'package:foodapp/route/routing_page.dart';
+
+class SignupAuthProvider with ChangeNotifier {
+  static Pattern pattern =
+      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+
+  RegExp regExp = RegExp(SignupAuthProvider.pattern.toString());
+  UserCredential? userCredential;
+
+  bool loading = false;
+
+  void signupVaidation(
+      {required TextEditingController? fullName,
+      required TextEditingController? eamilAddress,
+      required TextEditingController? password,
+      required BuildContext context}) async {
+    if (fullName!.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Full nama is empty"),
+        ),
+      );
+      return;
+    } else if (eamilAddress!.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Emailaddress is empty"),
+        ),
+      );
+      return;
+    } else if (!regExp.hasMatch(eamilAddress.text.trim())) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Invalid emailaddress"),
+        ),
+      );
+      return;
+    } else if (password!.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Password is empty"),
+        ),
+      );
+      return;
+    } else if (password.text.length < 8) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Password must be 8"),
+        ),
+      );
+      return;
+    } else {
+      try {
+        loading = true;
+        notifyListeners();
+        userCredential =
+            await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: eamilAddress.text,
+          password: password.text,
+        );
+        loading = true;
+        notifyListeners();
+        FirebaseFirestore.instance
+            .collection("users")
+            .doc(userCredential!.user!.uid)
+            .set(
+          {
+            "fullName": fullName.text,
+            "emailAddress": eamilAddress.text,
+            "password": password.text,
+            "userUid": userCredential!.user!.uid,
+          },
+        ).then((value) {
+          loading = true;
+          notifyListeners();
+          RoutingPage.goTonext(
+            context: context,
+            navigateTo: HomePage(),
+          );
+        });
+      } on FirebaseAuthException catch (e) {
+        loading = false;
+        notifyListeners();
+        if (e.code == "weak-password") {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text("weak-password"),
+            ),
+          );
+        } else if (e.code == 'email-already-in-use') {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text("email-already-in-use"),
+            ),
+          );
+        }
+      }
+    }
+  }
+}
