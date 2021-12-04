@@ -5,19 +5,22 @@ A new Flutter project.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
-![MainPage](https://user-images.githubusercontent.com/81793482/142640843-021f2290-1116-48d8-a310-9fd914fa856a.png) 
+![1](https://user-images.githubusercontent.com/81793482/144700814-37678fca-1354-4137-9690-3a2ae49d6476.png)
+![2](https://user-images.githubusercontent.com/81793482/144700829-48cc7bac-0f24-4c3a-a922-7251987503ca.png)
+![3](https://user-images.githubusercontent.com/81793482/144700833-b38988b3-7ea9-4857-bc4b-ed649b8e6ba0.png)
+![4](https://user-images.githubusercontent.com/81793482/144700835-b9f142db-263e-42b5-a889-19c6d4a07c53.png)
+![5](https://user-images.githubusercontent.com/81793482/144700836-3d6d6757-8dcc-47a2-bee5-132abc5665d3.png)
+![6](https://user-images.githubusercontent.com/81793482/144700838-82cfedc0-8aa1-466f-9f45-1d5f2f4cf264.png)
+![7](https://user-images.githubusercontent.com/81793482/144700840-b7094419-e2e8-4d6d-b010-666b0a768bde.png)
+![8](https://user-images.githubusercontent.com/81793482/144700845-5f427c35-a053-48b3-b169-9f0d6615c245.png)
 
-![ProductPage](https://user-images.githubusercontent.com/81793482/142640873-5fd0ffbb-ee4e-47d0-ae7d-627e1f26ef8a.png) 
 
-
-![Detils Page](https://user-images.githubusercontent.com/81793482/142640891-d73811b2-4337-45cb-9256-6b8a8224caf9.png) 
-
-![Profiledetils Page](https://user-images.githubusercontent.com/81793482/142640918-47571acb-cb4e-4446-814e-b795ef606d79.png)
-
- ![CartPafge](https://user-images.githubusercontent.com/81793482/142640928-e9d20b22-951f-407f-a879-54bf2cd2428a.png)
- 
- ![Checkout](https://user-images.githubusercontent.com/81793482/142640943-8bb10c9c-3f23-4b80-be85-13fcc923de81.png) 
-
+[MainPage]
+[ProductPage]
+[Detils Page]
+[Profiledetils Page]
+[CartPafge]
+[Checkout]
 
 
 
