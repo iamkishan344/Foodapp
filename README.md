@@ -15,20 +15,15 @@ This project is a starting point for a Flutter application.
 ![4](https://user-images.githubusercontent.com/81793482/144700835-b9f142db-263e-42b5-a889-19c6d4a07c53.png)
 
 ![5](https://user-images.githubusercontent.com/81793482/144700836-3d6d6757-8dcc-47a2-bee5-132abc5665d3.png)
-->Profiledetils Page
+
 ![6](https://user-images.githubusercontent.com/81793482/144700838-82cfedc0-8aa1-466f-9f45-1d5f2f4cf264.png)
--> CartPafge
+
 ![7](https://user-images.githubusercontent.com/81793482/144700840-b7094419-e2e8-4d6d-b010-666b0a768bde.png)
-->  Checkout
+
 ![8](https://user-images.githubusercontent.com/81793482/144700845-5f427c35-a053-48b3-b169-9f0d6615c245.png)
 
 
-[MainPage]
-[ProductPage]
-[Detils Page]
-[]
-[]
-[]
+
 
 
 
